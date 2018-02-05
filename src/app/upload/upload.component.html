@@ -1,3 +1,12 @@
-<p>
-  upload works!
-</p>
+<form (submit)="upload()">
+  <label for="upload-file">Choose a File</label>
+  <br>
+  <input type="file" id="upload-file" name="file" (change)="setFile($event)">
+  <br>
+  <input [(ngModel)] = "media.title" type="text" name="title">
+  <br>
+  <input [(ngModel)] = "media.description" type="text" name="description">
+  <br>
+  <button type="submit">Upload</button>
+</form>
+{{ mediaService.status }}

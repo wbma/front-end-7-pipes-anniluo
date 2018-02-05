@@ -43,6 +43,14 @@ export class MediaService {
     });
   }
 
+  upload(formData) {
+    const settings = {
+      headers: new HttpHeaders().set('x-access-token',
+        localStorage.getItem('localToken'))
+    };
+    return this.http.post(this.apiUrl + '/media', formData, settings);
+  }
+
   getUserData() {
     const settings = {
       headers: new HttpHeaders().set('x-access-token',

@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
     email: ''
   };
 
-  constructor(private mediaService: MediaService) { }
+  constructor(public mediaService: MediaService) { }
 
   register() {
     console.log(this.user);
