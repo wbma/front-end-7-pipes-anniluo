@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../interfaces/user';
 import { HttpErrorResponse } from '@angular/common/http';
-import {MediaService} from '../services/mediaservice.service';
+import { MediaService } from '../services/mediaservice.service';
 
 @Component({
   selector: 'app-register',

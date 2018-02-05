@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpErrorResponse} from '@angular/common/http';
-import {MediaService} from '../services/media.service';
-import {Router} from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { MediaService } from '../services/mediaservice.service';
 
 @Component({
   selector: 'app-front',
@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class FrontComponent implements OnInit {
 
-  constructor(private mediaService: MediaService) { }
+  constructor(private mediaService: MediaService, private router: Router) { }
 
   ngOnInit() {
     this.mediaService.getUserData().subscribe(response => {

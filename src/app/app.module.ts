@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {MediaService} from './services/mediaservice.service';
+import { UploadComponent } from './upload/upload.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MediaService} from './services/mediaservice.service';
     RegisterComponent,
     TopBarComponent,
     LogoutComponent,
-    LoginComponent
+    LoginComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
