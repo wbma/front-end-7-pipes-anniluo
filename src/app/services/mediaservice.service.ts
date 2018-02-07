@@ -9,7 +9,7 @@ export class MediaService {
   password: string;
 
   apiUrl = 'http://media.mw.metropolia.fi/wbma/';
-  uploadsUrl = 'http://media.mw.metropolia.fi/wbma/media/uploads';
+  uploadsUrl = 'http://media.mw.metropolia.fi/wbma/uploads/';
   status: string;
 
   constructor(private http: HttpClient, private router: Router) {
@@ -68,4 +68,3 @@ export class MediaService {
     return this.http.get(this.apiUrl + 'media', settings);
   }
 }
-
