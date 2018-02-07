@@ -8,14 +8,15 @@ export class MediaService {
   username: string;
   password: string;
 
-  apiUrl = 'http://media.mw.metropolia.fi/wbma';
+  apiUrl = 'http://media.mw.metropolia.fi/wbma/';
+  uploadsUrl = 'http://media.mw.metropolia.fi/wbma/media/uploads';
   status: string;
 
   constructor(private http: HttpClient, private router: Router) {
   }
 
   register(user) {
-    return this.http.post(this.apiUrl + '/users', user);
+    return this.http.post(this.apiUrl + 'users', user);
   }
 
   login() {
@@ -32,7 +33,7 @@ export class MediaService {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
     };
 
-    this.http.post(this.apiUrl + '/login', body, settings).subscribe(response => {
+    this.http.post(this.apiUrl + 'login', body, settings).subscribe(response => {
       // "correct" way of using response is creating an interface, brackets are lazy
       console.log(response['token']);
       localStorage.setItem('localToken', response['token']);
@@ -48,7 +49,7 @@ export class MediaService {
       headers: new HttpHeaders().set('x-access-token',
         localStorage.getItem('localToken'))
     };
-    return this.http.post(this.apiUrl + '/media', formData, settings);
+    return this.http.post(this.apiUrl + 'media', formData, settings);
   }
 
   getUserData() {
@@ -56,7 +57,15 @@ export class MediaService {
       headers: new HttpHeaders().set('x-access-token',
         localStorage.getItem('localToken'))
     };
-    return this.http.get(this.apiUrl + '/users/user', settings);
+    return this.http.get(this.apiUrl + 'users/user', settings);
+  }
+
+  getNewFiles() {
+    const settings = {
+      headers: new HttpHeaders().set('x-access-token',
+        localStorage.getItem('localToken'))
+    };
+    return this.http.get(this.apiUrl + 'media', settings);
   }
 }
 
