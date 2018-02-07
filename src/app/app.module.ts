@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {MediaService} from './services/mediaservice.service';
 import { UploadComponent } from './upload/upload.component';
+import { ThumbnailPipe } from './pipes/thumbnail.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UploadComponent } from './upload/upload.component';
     TopBarComponent,
     LogoutComponent,
     LoginComponent,
-    UploadComponent
+    UploadComponent,
+    ThumbnailPipe
   ],
   imports: [
     BrowserModule,
