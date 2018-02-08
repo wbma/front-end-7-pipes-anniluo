@@ -25,7 +25,7 @@ import { ThumbnailPipe } from './pipes/thumbnail.pipe';
     LogoutComponent,
     LoginComponent,
     UploadComponent,
-    ThumbnailPipe
+    ThumbnailPipe,
   ],
   imports: [
     BrowserModule,

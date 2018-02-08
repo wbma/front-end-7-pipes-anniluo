@@ -28,11 +28,6 @@ export class FrontComponent implements OnInit {
     this.mediaService.getNewFiles().subscribe(response => {
         console.log(response);
         this.mediaArray = response;
-        this.mediaArray.map( media => {
-          const temp = media.filename.split('.');
-          const thumbName = temp[0] + '-tn320.png';
-          media.thumbnail = thumbName;
-        });
         console.log(this.mediaArray);
       });
   }
